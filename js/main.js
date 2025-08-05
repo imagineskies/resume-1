@@ -55,7 +55,6 @@ function checkActivePage() {
     if (pageList[i].classList.contains("active") == true) {
       activePage =  pageList[i].id;
       return currentPageViewed = activePage;
-      break
     }
   }
 }
@@ -97,10 +96,10 @@ function pageSwap(page) {
   swapClass("homePage", "active", "unactive");
   homePage.classList.remove('animate__animated', 'animate__fadeOutUp');
   swapClass(page, "unactive", "active");
-  page = document.getElementById(page);
-  page.classList.add('animate__animated', 'animate__fadeInUp');
+  let apage = document.getElementById(page);
+  apage.classList.add('animate__animated', 'animate__fadeInUp');
   setTimeout(() => {
-    page.classList.remove('animate__animated', 'animate__fadeInUp');
+    apage.classList.remove('animate__animated', 'animate__fadeInUp');
   }, 2000);
   mobileMenuAllowed();
   exportCurrentPageViewed();
